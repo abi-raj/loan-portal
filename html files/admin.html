@@ -22,16 +22,13 @@
 
             display: flex;
             flex-direction: row;
+            justify-content: center;
         }
 
-        .card img {
-            max-width: 100%;
-            height: 40%;
-
-        }
+     
 
         .card {
-            width: 50%;
+            width: 200px;
             height: 50%;
             background-color: white;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -40,6 +37,9 @@
             margin: 20px;
 
 
+        }
+        .card div h1{
+            text-align: center;
         }
 
         .card:hover {
@@ -59,7 +59,7 @@
 <body>
     <div class="heading">
         <h1>
-            Loan Processing Portal
+            Welcome, Admin
         </h1>
 
     </div>
@@ -67,32 +67,33 @@
 
 
         <div class="card" onclick="location.href='custLogin.html'">
-            <div><img
-                    src="https://previews.123rf.com/images/stodolskaya/stodolskaya1511/stodolskaya151100027/49219342-user-login-or-access-authentication-icon.jpg"
-                    alt="5 Terre" style="width:100%"></div>
+            <div><h1>59</h1></div>
             <div class="container">
-                <p>Customer Login</p>
+                <p>Total Loans</p>
             </div>
         </div>
 
 
-        <div class="card" onclick="location.href='custRegister.html'">
-            <div><img src="https://www.pngkey.com/png/detail/73-730394_admin-approved-user-registration-user-registration-icon-png.png"
-                    alt="5 Terre" style="width:100%"></div>
+        <div class="card">
+            <div><h1 style="color:green">59</h1></div>
             <div class="container">
-                <p>Customer Register</p>
+                <p>Approved Requests</p>
             </div>
         </div>
 
-        <div class="card" onclick="location.href='login.html'">
-            <div><img src="https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg"
-                    alt="5 Terre" style="width:100%"></div>
+        <div class="card">
+            <div><h1  style="color:pink">59</h1></div>
             <div class="container">
-                <p>Admin Login</p>
+                <p>Pending Requests</p>
             </div>
         </div>
 
-
+        <div class="card">
+            <div><h1  style="color:red">59</h1></div>
+            <div class="container">
+                <p>Rejected Requests</p>
+            </div>
+        </div>
     </div>
 
 </body>
