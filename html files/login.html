@@ -69,12 +69,12 @@
 
 <body>
     <div>
-        <form action="home.html" method="post" id="form">
+       
             <h2>Admin Login</h2>
             <div class="form-control"> <label for="email">Email : </label> <input type="email" id="email" name="email"/></div>
             <div class="form-control"> <label for="password"> Password : </label><input type="password" id="password" name="password" />
-            <div class="form-control"> <input type="submit" onclick="return val()"></div>
-        </form>
+            <div class="form-control"> <input type="submit" onclick="val()"></div>
+        
     </div>
 </body>
 <script>
@@ -85,9 +85,9 @@
         const password=document.getElementById("password");
         console.log(email.value,password.value);
         if(email.value==="admin@gmail.com" && password.value==="admin"){
-            return true;
+           window.location.href="admin.html";
         }
-        return false;
+        //ALERT
     }
 </script>
 </html>
