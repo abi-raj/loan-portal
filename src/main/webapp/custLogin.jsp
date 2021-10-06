@@ -64,7 +64,7 @@ h2 {
 
 <body>
 	<div>
-		<form action="home.html" method="post" id="form">
+		<form action="CustomerLogin" method="post" id="form">
 			<h2>Customer Login</h2>
 			<div class="form-control">
 				<label for="email">Email : </label> <input type="email" id="email"
@@ -74,21 +74,12 @@ h2 {
 				<label for="password"> Password : </label><input type="password"
 					id="password" name="password" />
 				<div class="form-control">
-					<input type="submit" onclick="return val()" value="Submit">
+					<input type="submit"  value="Submit">
 				</div>
 		</form>
 	</div>
 </body>
 <script>
-	function val() {
-
-		const email = document.getElementById("email");
-		const password = document.getElementById("password");
-		console.log(email.value, password.value);
-		if (email.value === "admin@gmail.com" && password.value === "admin") {
-			return true;
-		}
-		return false;
-	}
+	
 </script>
 </html>

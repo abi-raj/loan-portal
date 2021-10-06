@@ -64,7 +64,7 @@ h2 {
 
 <body>
 
-
+<div>
 		<h2>Admin Login</h2>
 		<div class="form-control">
 			<label for="email">Email : </label> <input type="email" id="email"
@@ -77,6 +77,7 @@ h2 {
 				<input type="submit" onclick="val()">
 			</div>
 
+		</div>
 		</div>
 </body>
 <script>

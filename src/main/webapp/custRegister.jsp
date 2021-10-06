@@ -60,7 +60,7 @@ h2 {
 
 <body>
 	<div>
-		<form action="" method="post" id="form">
+		<form action="CustomerRegister" method="post" id="form">
 			<h2>Register</h2>
 			<div class="form-control">
 				<label for="name">Name :</label> <input type="text" id="name"
@@ -80,7 +80,7 @@ h2 {
 			</div>
 			<div class="form-control">
 				<label for="password"> Password : </label><input type="password"
-					id="password" name="password" />
+					id="password" name="password" required />
 			</div>
 			<div class="form-control">
 				<input type="submit" value="Submit">
