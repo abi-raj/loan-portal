@@ -2,12 +2,101 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Home</title>
+    <meta charset="ISO-8859-1">
+    <title>Home</title>
+
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .heading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+
+        .components {
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: 40%;
+
+        }
+
+        .card {
+            width: 50%;
+            height: 50%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px;
+
+
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .container {
+            
+            text-align: center;
+
+        }
+    </style>
+
+
 </head>
+
 <body>
-Hello World!
+    <div class="heading">
+        <h1>
+            Loan Processing Portal
+        </h1>
+
+    </div>
+    <div class="components">
+
+
+        <div class="card" onclick="location.href='custLogin.jsp'">
+            <div><img
+                    src="https://previews.123rf.com/images/stodolskaya/stodolskaya1511/stodolskaya151100027/49219342-user-login-or-access-authentication-icon.jpg"
+                    alt="5 Terre" style="width:100%"></div>
+            <div class="container">
+                <p>Customer Login</p>
+            </div>
+        </div>
+
+
+        <div class="card" onclick="location.href='custRegister.jsp'">
+            <div><img src="https://www.pngkey.com/png/detail/73-730394_admin-approved-user-registration-user-registration-icon-png.png"
+                    alt="5 Terre" style="width:100%"></div>
+            <div class="container">
+                <p>Customer Register</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="location.href='login.jsp'">
+            <div><img src="https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg"
+                    alt="5 Terre" style="width:100%"></div>
+            <div class="container">
+                <p>Admin Login</p>
+            </div>
+        </div>
+
+
+    </div>
 
 </body>
+
 </html>

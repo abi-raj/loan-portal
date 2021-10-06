@@ -41,7 +41,11 @@ body {
 .card div h1 {
 	text-align: center;
 }
-
+.card div img{
+width:100%;
+height:100px;
+object-fit: cover;
+}
 .card:hover {
 	transform: scale(1.05);
 }
@@ -99,6 +103,14 @@ body {
 			</div>
 			<div class="container">
 				<p>Rejected Requests</p>
+			</div>
+		</div>
+		<div class="card" onclick="">
+			<div>
+				<img src="https://media.wired.com/photos/5a0a38c1d07f6824ff44221b/master/w_2560%2Cc_limit/twitterlists-TA.jpg"/>
+			</div>
+			<div class="container">
+				<p>Loan Types</p>
 			</div>
 		</div>
 	</div>
