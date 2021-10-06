@@ -30,7 +30,12 @@ public static boolean editPlan(PlanType plan) throws ClassNotFoundException {
 	 Class.forName("org.postgresql.Driver");
 		try {
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/LoanPortal","postgres","Test@123");
-			String plainQuery = "insert into applications values(deafult,%d,%d,'%s',%d,'%s','%s','%s')";}
+			String plainQuery = "update plan_type set name='%s',duration=%d,rate=%d,penalty=%d where plan_id=%d ";
+			String updateQuery = String.format(plainQuery,plan.getName(),plan.getDuration(),plan.getRate(),plan.getPenalty(),plan.getPlan_id());
+			PreparedStatement stmt = con.prepareStatement(updateQuery);
+			stmt.executeUpdate();
+			return true;
+		}
 		catch(Exception exp) {
 			System.out.println("edit plans: "+exp.getMessage());
 		}
