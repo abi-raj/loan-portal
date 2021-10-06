@@ -46,7 +46,7 @@ public void setRemarks(String remarks) {
 }
 private int plan_id;
 
-public ApplicationModel(int plan_id, int user_id, String pan, int amount, String loan_type, String remarks) {
+public ApplicationModel(int plan_id, int user_id, String pan, int amount, String loan_type, String remarks,String status) {
 	super();
 	this.plan_id = plan_id;
 	this.user_id = user_id;
@@ -54,12 +54,19 @@ public ApplicationModel(int plan_id, int user_id, String pan, int amount, String
 	this.amount = amount;
 	this.loan_type = loan_type;
 	this.remarks = remarks;
+	this.status = status;
 }
 private int user_id;
 private String pan;
 private int amount;
 private String loan_type;
 private String remarks;
-
+private String status;
+public String getStatus() {
+	return status;
+}
+public void setStatus(String status) {
+	this.status = status;
+}
 	
 }

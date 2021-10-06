@@ -27,14 +27,22 @@ public class PlanType {
 		this.penalty = penalty;
 	}
 	private int plan_id=0;
-	public PlanType(String name, int duration, int penalty) {
+	public PlanType(String name, int duration,int rate, int penalty) {
 		super();
 		this.name = name;
 		this.duration = duration;
+		this.rate = rate;
 		this.penalty = penalty;
 	}
 	private String name;
 	private int duration;
+	public int getRate() {
+		return rate;
+	}
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
+	private int rate;
 	private int penalty;
 	
 	

@@ -2,16 +2,24 @@ package models;
 
 public class UserModel {
 private int user_id=0;
-public UserModel(String name, String email, int age, String password) {
+public UserModel(String name, String email, int age,int phone, String password) {
 	
 	this.name = name;
 	this.email = email;
 	this.age = age;
+	this.phone = phone;
 	this.password = password;
 }
 private String name;
 private String email;
 private int age;
+private int phone;
+public int getPhone() {
+	return phone;
+}
+public void setPhone(int phone) {
+	this.phone = phone;
+}
 private String password;
 
 
