@@ -9,12 +9,21 @@ import java.util.ArrayList;
 import models.PlanType;
 
 public class PlansDoa {
+//	public static void main(String[] args) throws ClassNotFoundException {
+//		PlanType plan = new PlanType("Type 1",6,5,10);
+//		plan.setPlan_id(1);
+//		editPlan(plan);
+//		
+//		
+//	}
+	
 public static boolean createPlan(PlanType plan) throws ClassNotFoundException {
 	
-	 Class.forName("org.postgresql.Driver");
+
 		try {
+			 Class.forName("org.postgresql.Driver");
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/LoanPortal","postgres","Test@123");
-			String plainQuery = "insert into plan_types values(deafult,'%s',%d,%d,%d)";
+			String plainQuery = "insert into plan_type values(default,'%s',%d,%d,%d)";
 			String insertQuery = String.format(plainQuery,plan.getName(),plan.getDuration(),plan.getRate(),plan.getPenalty());
 			PreparedStatement stmt = con.prepareStatement(insertQuery);
 			stmt.executeUpdate();
