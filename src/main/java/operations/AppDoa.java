@@ -42,7 +42,8 @@ public class AppDoa {
 		try {
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/LoanPortal", "postgres",
 					"Test@123");
-			String plainQuery = "select * from applications inner join users on applications.user_id=users.user_id inner join plan_type on applications.plan_id=plan_type.plan_id ";
+			String plainQuery = "select * from applications inner join users on applications.user_id=users.user_id inner join plan_type on applications.plan_id=plan_type.plan_id where status='"
+					+ status + "'";
 			String selectQuery = String.format(plainQuery, status);
 			PreparedStatement stmt = con.prepareStatement(selectQuery);
 			ResultSet rs = stmt.executeQuery();
@@ -104,5 +105,29 @@ public class AppDoa {
 			System.out.println("count exp : " + exp.getMessage());
 		}
 		return count;
+	}
+
+	public static ArrayList<ApplicationModel> getApplicationByUser(int id) {
+		ArrayList<ApplicationModel> apps = new ArrayList<ApplicationModel>();
+
+		try {
+			Class.forName("org.postgresql.Driver");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/LoanPortal", "postgres",
+					"Test@123");
+
+			String query = "select * from applications where user_id='" + id + "'";
+			PreparedStatement stmt = con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				ApplicationModel app = new ApplicationModel(rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getInt(5),
+						rs.getString(6), rs.getString(7), rs.getString(8));
+				apps.add(app);
+			}
+
+		} catch (Exception exp) {
+			System.out.println("count exp : " + exp.getMessage());
+		}
+		return apps;
 	}
 }

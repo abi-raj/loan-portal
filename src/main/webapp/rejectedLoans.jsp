@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+<%@ page import="java.util.ArrayList,operations.AppDoa,models.LoanModel"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,36 +67,50 @@
 
 
 <body>
-    <div>
+   <%
+	ArrayList<LoanModel> loans = AppDoa.getApplicationsByStatus("rejected");
+	%>
+	<div>
 
-        <div class="loans">
-            <h2>Rejected Loans</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <td class="col-1">S.No</td>
-                        <td class="col-2">Memeber details</td>
-                        <td class="col-3">Plan Details</td>
-                        <td class="col-4">Status</td>
-                        <td class="col-5">Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            <p><b>Name : </b>12</p>
-                            <p><b>Phone : </b>10</p>
-                            <p><b>Email : </b>10</p>
-                        </td>
-                        <td>
-                            <div>
-                                <p><b>Duration : </b>12</p>
-                                <p><b>Interest : </b>10</p>
-                                <p><b>Penalty : </b>10</p>
-                            </div>
-                        </td>
-                        <td>Rejected</td>
+		<div class="loans">
+			<h2>Approved Loans</h2>
+			<table>
+				<thead>
+					<tr>
+						<td class="col-1">S.No</td>
+						<td class="col-2">Memeber details</td>
+						<td class="col-3">Plan Details</td>
+						<td class="col-4">Status</td>
+						<td class="col-5">Action</td>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+					for (LoanModel loan : loans) {
+					%>
+
+					<tr>
+						<td>1</td>
+						<td>
+							<p>
+								<b>Name : </b><%=loan.getU_name()%></p>
+							<p>
+								<b>Phone : </b><%=loan.getU_phone()%></p>
+							<p>
+								<b>Email : </b><%=loan.getU_name()%></p>
+						</td>
+						<td>
+							<div>
+								<p>
+									<b>Name : </b><%=loan.getP_name()%></p>
+								<p>
+									<b>Duration : </b><%=loan.getP_dur()%></p>
+								<p>
+									<b>Interest : </b><%=loan.getP_rate()%></p>
+
+							</div>
+						</td>
+						<td><%=loan.getStatus()%></td>
                         <td>
                             <button class="approve">Approve</button>
                             <button class="pending">Move to Pending</button>
@@ -102,7 +118,7 @@
                         </td>
                     </tr>
 
-
+<%} %>
 
                 </tbody>
             </table>

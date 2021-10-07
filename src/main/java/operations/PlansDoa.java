@@ -62,6 +62,7 @@ public static ArrayList<PlanType> getAllPlans(){
 		 
 		 while(rs.next()) {
 			 PlanType plan = new PlanType(rs.getString(2), rs.getInt(3), rs.getInt(4),rs.getInt(5));
+			 plan.setPlan_id(rs.getInt(1));
 			 plans.add(plan);
 		 }
 	}catch(Exception exp) {
