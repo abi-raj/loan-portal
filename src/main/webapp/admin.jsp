@@ -69,7 +69,7 @@ object-fit: cover;
 	<div class="components">
 
 
-		<div class="card" onclick="location.href='custLogin.html'">
+		<div class="card" >
 			<div>
 				<h1><%=count.getTotal()%></h1>
 			</div>
@@ -79,7 +79,7 @@ object-fit: cover;
 		</div>
 
 
-		<div class="card" onclick="">
+		<div class="card"   onclick="location.href='approvedLoans.jsp'">
 			<div>
 				<h1 style="color: green"><%=count.getAccepted()%></h1>
 			</div>
@@ -88,7 +88,7 @@ object-fit: cover;
 			</div>
 		</div>
 
-		<div class="card" onclick="">
+		<div class="card"   onclick="location.href='pendingLoans.jsp'">
 			<div>
 				<h1 style="color: pink"><%=count.getPending()%></h1>
 			</div>
@@ -97,7 +97,7 @@ object-fit: cover;
 			</div>
 		</div>
 
-		<div class="card" onclick="">
+		<div class="card"   onclick="location.href='rejectedLoans.jsp'">
 			<div>
 				<h1 style="color: red"><%=count.getRejected()%></h1>
 			</div>
@@ -105,7 +105,7 @@ object-fit: cover;
 				<p>Rejected Requests</p>
 			</div>
 		</div>
-		<div class="card" onclick="">
+		<div class="card"  onclick="location.href='planType.jsp'">
 			<div>
 				<img src="https://media.wired.com/photos/5a0a38c1d07f6824ff44221b/master/w_2560%2Cc_limit/twitterlists-TA.jpg"/>
 			</div>
